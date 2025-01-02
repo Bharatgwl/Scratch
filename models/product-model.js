@@ -1,0 +1,19 @@
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/ScratchDB');
+
+const productSchema = new mongoose.Schema({
+    name: String,
+    price: Number,
+    image: String,
+    discount: {
+        type: Number,
+        default: 0
+    },
+    bgcolor: String,
+    panelcolor: String,
+    textcolor: String,
+});
+
+
+module.exports = mongoose.model('product', productSchema);
