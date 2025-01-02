@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/ScratchDB');
 
 const userSchema = new mongoose.Schema({
     fullname: String,
