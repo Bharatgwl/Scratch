@@ -1,3 +1,4 @@
+const { ref } = require('joi');
 const mongoose = require('mongoose');
 
 
@@ -5,11 +6,11 @@ const userSchema = new mongoose.Schema({
     fullname: String,
     email: String,
     password: String,
-    cart: {
-        type: Array,
+    cart:[ {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'product',
         default: []
-    },
-    isadmin: Boolean,
+    }],
     order: {
         type: Array,
         default: []

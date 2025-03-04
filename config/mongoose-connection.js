@@ -1,11 +1,17 @@
 const mongoose = require('mongoose');
+const dbgr = require('debug')("development:mongoose");
+const dotenv = require('dotenv');
+dotenv.config();
+mongoose
+    .connect(process.env.MONGO_URI)
+    .then(function () {
+        dbgr("connected");
 
-mongoose.connect('mongodb://localhost:27017/ScratchDB').then(function () {
-    console.log('Database connected');
 
-}).catch(function (err) {
-    console.log('Error in connecting database', err);
-});
+
+    }).catch(function (err) {
+        console.log('Error in connecting database', err);
+    });
 
 
 module.exports = mongoose.connection;

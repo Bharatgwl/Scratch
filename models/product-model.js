@@ -1,10 +1,11 @@
+/*************  ✨ Codeium Command 🌟  *************/
 const mongoose = require('mongoose');
 
 
 const productSchema = new mongoose.Schema({
     name: String,
     price: Number,
-    image: String,
+    image: Buffer,
     discount: {
         type: Number,
         default: 0
@@ -16,3 +17,4 @@ const productSchema = new mongoose.Schema({
 
 
 module.exports = mongoose.model('product', productSchema);
+/******  404d5edb-95e1-4c0c-923a-855381b41435  *******/ 
